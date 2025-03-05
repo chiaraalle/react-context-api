@@ -12,16 +12,18 @@ function App() {
   return (
     <>
     <>
-      <GlobalPostProvider>  
-        <Routes> 
-          <Route element={<DefaultLayout />}> 
-            <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/posts" element={<Posts />} />
-            <Route path="/posts/:id" element={<SinglePost />} />
-          </Route>  
-        </Routes>
-        </GlobalPostProvider>
+      <GlobalPostProvider> 
+        <BrowserRouter> 
+          <Routes> 
+            <Route element={<DefaultLayout />}> 
+              <Route path="/" element={<Home />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/posts" element={<Posts />} />
+              <Route path="/posts/:id" element={<SinglePost />} />
+            </Route>  
+          </Routes>
+        </BrowserRouter>
+      </GlobalPostProvider>
       
     </>
 

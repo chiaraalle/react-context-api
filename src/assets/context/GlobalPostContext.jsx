@@ -7,7 +7,7 @@ const GlobalPostContext = createContext();
 export const GlobalPostProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState({});
-  const { id } = useParams();
+  
 
   const url = import.meta.env.VITE_ENDPOINT_URL;
 
@@ -16,6 +16,7 @@ export const GlobalPostProvider = ({ children }) => {
     fetch( url )
         .then((response) => response.json())
         .then((data) => setPosts(data));
+        console.log(setPosts)
   }
   /* Caricamento dei post
   useEffect(() => {

@@ -6,7 +6,11 @@ import { useGlobalPostContext } from "../context/GlobalPostContext";
 function Posts() {
     //const [posts, setPosts] = useState([]);
     //const url = import.meta.env.VITE_ENDPOINT_URL /*il file .env permette di definire variabili che vengono poi usate nell'applicazione e mi permette di modificarli senza dover cambiare il codice */
+    const { posts, fetchPosts } = useGlobalPostContext();
 
+    if (posts.length === 0) { //(posts === null)
+        fetchPosts();
+    }
 
     useEffect(() => {
         /*fetch( url )
